@@ -147,7 +147,7 @@ int wmain(int argc, WCHAR *argv[])
 		if (FAILED(hr))
 			_com_issue_error(hr);
 
-		hr = pfodSource->SetTitle( L"Image File" );
+		hr = pfodSource->SetTitle( L"Carrier Image File" );
 		if (FAILED(hr))
 			_com_issue_error(hr);
 
@@ -320,7 +320,7 @@ int wmain(int argc, WCHAR *argv[])
 				
 				wprintf( L"Image Width: %ld\n", pifCarrier->Width );
 				wprintf( L"Image Height: %ld\n", pifCarrier->Height );
-				printSize( L"Image Capacity: %.2f%s\n", RasterSteganography::GetImageCapacity64( pifCarrier, &dr ) );
+				printSize( L"Image Capacity: %.2f%s\n", GetImageCapacity64( pifCarrier, &dr ) );
 				printSize( L"Message Length: %.2f%s\n", dr.cbMessageLength );
 
 				if (dr.dwWidthRequired)
@@ -348,7 +348,7 @@ int wmain(int argc, WCHAR *argv[])
 				if (FAILED(hr))
 					_com_issue_error(hr);
 
-				hr = pfsdDestination->SetTitle( L"Output Image File" );
+				hr = pfsdDestination->SetTitle( L"Resulting Carrier File" );
 				if (FAILED(hr))
 					_com_issue_error(hr);
 
